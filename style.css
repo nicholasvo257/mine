@@ -1,0 +1,568 @@
+/* --- Global Styles --- */
+:root {
+    --bg-color: #000000; /* Main black background */
+    --card-bg: #111111;  /* Dark gray for cards */
+    --text-primary: #ffffff; /* Main white text */
+    --text-secondary: #aaaaaa; /* Medium gray text */
+    --border-color: #333333; /* Dark gray for subtle borders */
+    --accent-gray: #dddddd; /* Very light gray for prominent elements */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+/* --- Section Headings --- */
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 60px;
+    color: var(--text-primary);
+}
+
+/* --- Navigation Header --- */
+header {
+    background-color: rgba(0, 0, 0, 0.9); /* Slightly transparent */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a:hover {
+    color: var(--text-secondary);
+}
+
+/* Add padding to the top of main to prevent header overlap */
+main {
+    padding-top: 100px;
+}
+
+/* --- Hero Section --- */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 100px;
+    padding: 60px 0;
+}
+
+.hero-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-photo {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-gray); /* Subtle light gray border */
+}
+
+.hero-right {
+    flex: 2;
+}
+
+.badge-open {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: transparent;
+    border: 1px solid var(--accent-gray);
+    color: var(--text-primary);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.hero-name {
+    font-size: 4rem;
+    margin-bottom: 5px;
+}
+
+.hero-title {
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+}
+
+.hero-bio {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.social-links a:hover {
+    color: var(--text-secondary);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--text-primary); /* White fill */
+    color: var(--bg-color); /* Black text */
+    border: 2px solid var(--text-primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--text-secondary);
+    border-color: var(--text-secondary);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--card-bg);
+}
+
+/* --- Timeline Section --- */
+.timeline-section {
+    margin-bottom: 120px;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* The vertical line in the center */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: var(--text-primary); /* White center line */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+    z-index: 1;
+}
+
+/* Individual timeline item container */
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 10px 40px;
+    left: 50%; /* Position all cards on the right by default */
+}
+
+/* Item pointing to the left */
+.timeline-item.timeline-left {
+    left: 0;
+}
+
+/* The white box/icon on the center line */
+.timeline-icon-box {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    background-color: #000;
+    border: 2px solid var(--text-primary);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: -22px; /* Center horizontally over the line */
+    top: 20px;
+    z-index: 10;
+}
+
+/* Item on the left has its icon box position adjusted */
+.timeline-item.timeline-left .timeline-icon-box {
+    left: auto;
+    right: -22px;
+}
+
+.timeline-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* The actual card/content */
+.timeline-card {
+    background-color: var(--card-bg);
+    padding: 20px 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    position: relative;
+    z-index: 5;
+}
+
+/* Add triangles to card edges */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    z-index: 6;
+}
+
+/* Triangle for cards on the right */
+.timeline-item:not(.timeline-left)::before {
+    left: 30px;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--card-bg) transparent transparent;
+}
+
+/* Triangle for cards on the left */
+.timeline-item.timeline-left::before {
+    right: 30px;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent var(--card-bg);
+}
+
+.timeline-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.badge-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.badge-small {
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.gray-badge {
+    background-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+/* Example: Map the colors to monochromatic equivalents */
+.accent-badge {
+    background-color: var(--accent-gray);
+    color: var(--bg-color);
+    font-weight: 500;
+}
+
+.timeline-card p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+/* --- Projects Section --- */
+.projects-section {
+    margin-bottom: 100px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.project-card {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-gray);
+}
+
+/* Optional: Make some cards taller/span 2 columns if needed */
+.card-tall {
+    /* Grid placement isn't necessary with simple columns, but for complex layout you'd use grid-column-span: 2; */
+}
+
+.project-card-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+.project-image-placeholder {
+    width: 100%;
+    height: 250px;
+    background-color: #000;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-image-placeholder img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.placeholder-flutter {
+    /* You could add a simple gradient background placeholder here if no images are ready */
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: auto;
+}
+
+.tech-badge {
+    padding: 8px 18px;
+    font-size: 0.85rem;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tech-badge:hover {
+    background-color: var(--card-bg);
+}
+
+.tech-badge i {
+    font-size: 1rem;
+    color: var(--accent-gray); /* Icons get the lighter accent gray */
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    text-align: justify;
+    padding: 0 10px;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--card-bg);
+    padding: 30px 0;
+    border-top: 1px solid var(--border-color);
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-secondary);
+}
+
+.footer-content p {
+    font-size: 0.9rem;
+}
+
+.social-links.small {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+/* --- Responsive Media Queries --- */
+
+/* For smaller tablets/desktops (approx <1024px) */
+@media (max-width: 1024px) {
+    .profile-photo {
+        width: 260px;
+        height: 260px;
+    }
+    .hero-name {
+        font-size: 3.5rem;
+    }
+}
+
+/* For larger mobile screens/tablets (approx <768px) */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 0;
+    }
+    .hero-right {
+        order: 2; /* Reverse stack order: image top, text below */
+    }
+    .hero-left {
+        order: 1;
+        margin-bottom: 30px;
+    }
+    
+    .social-links, .hero-buttons, .tech-tags {
+        justify-content: center;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; /* Stack projects vertically */
+    }
+
+    /* Adjust the timeline to stack centrally on mobile */
+    .timeline-container::after {
+        left: 31px; /* Move the vertical line to the left */
+    }
+
+    .timeline-item {
+        width: 100%;
+        left: 0;
+        padding-left: 70px; /* Make space for line + icon */
+        padding-right: 20px;
+    }
+    
+    .timeline-item.timeline-left {
+        left: 0; /* Align left ones to the new central position */
+    }
+
+    .timeline-icon-box {
+        left: 10px; /* New icon position on mobile */
+    }
+    
+    .timeline-item.timeline-left .timeline-icon-box {
+        right: auto;
+        left: 10px;
+    }
+
+    /* Change triangle style for stacked timeline */
+    .timeline-item::before {
+        left: 60px;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent var(--card-bg) transparent transparent;
+    }
+    
+    .timeline-item.timeline-left::before {
+        right: auto;
+        left: 60px;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent var(--card-bg) transparent transparent;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+/* For small phones (approx <480px) */
+@media (max-width: 480px) {
+    .hero-name {
+        font-size: 2.8rem;
+    }
+    .hero-title {
+        font-size: 1.5rem;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+    .btn {
+        width: 100%;
+    }
+    .project-card {
+        padding: 25px;
+    }
+    .project-card-title {
+        font-size: 1.5rem;
+    }
+    .timeline-card h3 {
+        font-size: 1.1rem;
+    }
+}
