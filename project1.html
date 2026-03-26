@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCI Legacy Robotics Showcase | Ethan Vo</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="project-landing-page">
+
+    <header>
+        <nav class="container">
+            <a href="index.html" class="nav-logo">Ethan Vo</a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container project-main-section">
+        
+        <header class="project-landing-header">
+            </header>
+
+        <section class="header-row-about">
+            <div class="special-logo-container">
+                <img src="special_page_logo.png" alt="UCI Legacy Robotics detailed logo" class="special-page-logo">
+            </div>
+            <div class="header-text-block">
+                <h1 class="special-title-heading">UCI Legacy Robotics</h1>
+                <p class="special-paragraph-about">
+                    UCI Legacy Robotics is UC Irvine's first Mars Rover project and a candidate for the 2026 University Rover Challenge (URC). I joined the UCI Legacy Robotics Team in Fall 2024, shortly after its founding. With no prior designs or systems, our team has taken on the challenge of designing, researching, prototyping, and testing every component ourselves. This ambitious project has encouraged growth in engineering, collaboration, and leadership among team members. I'm excited to continue contributing as we work toward competing in the 2026 URC and pushing the boundaries of what our rover can achieve.
+                </p>
+            </div>
+        </section>
+
+        <section class="special-subsection-content">
+            
+            <div class="special-sub-block">
+                <div class="special-subsection-header">
+                    <div class="special-sub-text">Winter design review presenting the final suspension design and moving toward manufacturing</div>
+                    
+                    <div class="project-image-placeholder special-cad-section">
+                        <img src="suspension_slide.png" alt="Suspension Winter Design Review slide"> </div>
+                </div>
+
+                <div class="special-subsection-body">
+                    <div class="special-cad-grid">
+                        <div class="special-render-container">
+                            <img src="render1.png" alt="Detail render of suspension joint"> </div>
+                        <div class="special-render-container">
+                            <img src="render2.png" alt="Detailed suspension system view"> </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="special-sub-block">
+                
+                <div class="special-sub-section">
+                    <h2 class="special-sub-title">Prototype 1 for UCI Annual Design Review</h2>
+                    <div class="special-subsection-content">
+                        <div class="special-cad-grid">
+                            <div class="special-render-container">
+                                <img src="rover_prototype_cad.png" alt="3D master CAD render of first prototype"> </div>
+                        </div>
+                        <div class="special-sub-text">
+                            During the 2025 Winter Quarter, our team successfully designed and built our first prototype for the UCI Annual Design Review. For the first master CAD, I focused on the antenna attachments, designed to hold:
+                            <ul class="bullets-special">
+                                <li>TP-Link antennas</li>
+                                <li>ZED camera</li>
+                                <li>Rocket Ubiquiti antennas</li>
+                                <li>With preparation for the future wiring of the robot.</li>
+                            </ul>
+                            We built a wood chassis using the laser cutter and woodshop to cut, construct, and finish the prototype. I was tasked with leading the building effort due to my manufacturing experience. I also sourced and supplied all materials needed for the project.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="special-sub-section">
+                    <h2 class="special-sub-title">CFD Ansys Fluent battery and electrical component cooling</h2>
+                    <div class="special-subsection-content">
+                        <div class="special-sub-text">
+                            Utilized Ansys Fluent to determine optimal fan placement for the rover's battery cooling system. The analysis addressed harsh desert conditions at the URC competition, where temperatures can exceed 100°F. The initial fan design targeted cooling for 40V, 24V, and 12V Greenworks batteries and provided general thermal mitigation for electronics inside the chassis. Simulation results indicated a more effective configuration by focusing airflow on electrical components rather than the enclosed battery systems, which required less cooling. The project involved a steep learning curve, helping me develop a stronger understanding of Fluent simulations and the principles of heat and mass transfer.
+                        </div>
+                        <div class="special-cad-grid">
+                            <div class="special-render-container">
+                                <img src="cft_heatmap1.png" alt="Ansys Fluent heatmap - top view"> </div>
+                            <div class="special-render-container">
+                                <img src="cft_heatmap2.png" alt="Ansys Fluent heatmap - side view"> </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2024 Ethan Vo</p>
+            <div class="social-links small">
+                <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
